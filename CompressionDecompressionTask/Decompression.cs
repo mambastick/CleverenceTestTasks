@@ -4,6 +4,12 @@ namespace CompressionDecompressionTask;
 
 public static class Decompression
 {
+    /// <summary>
+    /// Распаковывает входную сжатую строку, восстанавливая исходную строку.
+    /// </summary>
+    /// <param name="input">Сжатая строка для декомпрессии.</param>
+    /// <returns>Исходная строка.</returns>
+    /// <exception cref="Exception">Выбрасывает исключение, если входная строка пуста или null.</exception>
     public static string Decompress(string input)
     {
         // Проверяем на пустоту входные данные
