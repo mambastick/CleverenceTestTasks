@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompressionDecompressionTas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiralMatrixTask", "SpiralMatrixTask\SpiralMatrixTask.csproj", "{29D96CD8-D2E2-4FCD-8291-AC76F0E35465}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerCountTask", "ServerCountTask\ServerCountTask.csproj", "{A9C79902-2690-4709-ADF7-CA985212F028}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{29D96CD8-D2E2-4FCD-8291-AC76F0E35465}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29D96CD8-D2E2-4FCD-8291-AC76F0E35465}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29D96CD8-D2E2-4FCD-8291-AC76F0E35465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C79902-2690-4709-ADF7-CA985212F028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C79902-2690-4709-ADF7-CA985212F028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C79902-2690-4709-ADF7-CA985212F028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C79902-2690-4709-ADF7-CA985212F028}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

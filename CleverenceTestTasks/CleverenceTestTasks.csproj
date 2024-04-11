@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CompressionDecompressionTask\CompressionDecompressionTask.csproj" />
+      <ProjectReference Include="..\ServerCountTask\ServerCountTask.csproj" />
       <ProjectReference Include="..\SpiralMatrixTask\SpiralMatrixTask.csproj" />
     </ItemGroup>
 
