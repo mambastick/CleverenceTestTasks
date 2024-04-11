@@ -56,6 +56,12 @@ public static class Compression
         return compressed.ToString();
     }
 
+    /// <summary>
+    /// Добавляет сжатую информацию о символе и его количестве повторений к объекту StringBuilder.
+    /// </summary>
+    /// <param name="compressed">Объект StringBuilder для накопления сжатой строки.</param>
+    /// <param name="currentChar">Текущий символ для сжатия.</param>
+    /// <param name="count">Количество повторений текущего символа в исходной строке.</param>
     private static void AppendCompressed(StringBuilder compressed, char currentChar, int count)
     {
         // Если количество найденных символов 1, то добавляем этот символ без его количества повторений
