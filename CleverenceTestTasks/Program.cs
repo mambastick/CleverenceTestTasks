@@ -1,4 +1,5 @@
 ﻿using CompressionDecompressionTask;
+using ServerCountTask;
 using SpiralMatrixTask;
 
 namespace CleverenceTestTasks;
@@ -46,5 +47,47 @@ class Program
         
         // Добавляем оступ в выводе между заданиями
         Console.WriteLine();
+
+        #region Задание 3. Серверный счетчик.
+
+        // Создаем SemaphoreSlim с начальным количеством разрешений (permits) равным 1
+        var semaphore = new SemaphoreSlim(1);
+
+        // Создаем 10 задач, которые будут выполнять чтение и/или запись
+        var tasks = new Task[10];
+        for (var i = 0; i < tasks.Length; i++)
+        {
+            var taskId = i; // Уникальный идентификатор задачи
+
+            // Задачи с четными индексами будут добавлять значение, с нечетными - только читать
+            if (i % 2 == 0)
+            {
+                tasks[i] = Task.Run(async () =>
+                {
+                    await semaphore.WaitAsync(); // Ждем разрешения на доступ к ресурсу
+                    Console.WriteLine($"Задача {taskId}: Начало записи...");
+                    Server.AddToCount(10); // Добавляем значение
+                    Console.WriteLine($"Задача {taskId}: Добавим 10, новое значение: {Server.GetCount()}");
+                    semaphore.Release(); // Освобождаем разрешение
+                    Console.WriteLine($"Задача {taskId}: Завершение записи...");
+                });
+            }
+            else
+            {
+                tasks[i] = Task.Run(async () =>
+                {
+                    Console.WriteLine($"Задача {taskId}: Начало чтения...");
+                    await semaphore.WaitAsync(); // Ждем разрешения на доступ к ресурсу
+                    Console.WriteLine($"Задача {taskId}: Получим данные, текущее значение: {Server.GetCount()}");
+                    semaphore.Release(); // Освобождаем разрешение
+                    Console.WriteLine($"Задача {taskId}: Завершение чтения...");
+                });
+            }
+        }
+
+        // Ждем завершения всех задач
+        Task.WaitAll(tasks);
+
+        #endregion
     }
 }
