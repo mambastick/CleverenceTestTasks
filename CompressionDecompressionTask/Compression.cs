@@ -4,6 +4,13 @@ namespace CompressionDecompressionTask;
 
 public static class Compression
 {
+    /// <summary>
+    /// Сжимает входную строку, заменяя группы последовательно идущих одинаковых символов
+    /// их количеством и символом.
+    /// </summary>
+    /// <param name="input">Входная строка для сжатия.</param>
+    /// <returns>Сжатая строка.</returns>
+    /// <exception cref="Exception">Выбрасывает исключение, если входная строка пуста или null.</exception>
     public static string Compress(string input)
     {
         // Проверяем на пустоту входные данные
